@@ -1,4 +1,4 @@
 ssauce
 ======
 
-Sass with extra sauce for pleasure
+Special sauce for yummier sass-joyment
