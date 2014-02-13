@@ -39,6 +39,7 @@
 
   // ie 6, 7 // buggy -> fix if required
   //filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str($acolor)}, endColorstr=##{ie-hex-str($acolor)});
+
   // ie 8
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str($acolor)}, endColorstr=#{ie-hex-str($acolor)})";
 }
