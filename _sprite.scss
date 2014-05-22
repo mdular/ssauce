@@ -5,19 +5,20 @@
 
 @import "compass/utilities/sprites/base";
 
-@mixin spritemap($name: 'icon', $name2x: 'icon2x') {
+
+@mixin spritemap($name: 'icon', $name2x: 'icon2x', $class-name: 'icon') {
   // custom automatic export of all sprites
   $map: sprite-map("#{$name}/*.png", $spacing: 10px, $dimensions: true);
 
   // base class
-  .#{$name}-sprite {
+  .#{$class-name}-sprite {
     background: $map no-repeat;
   }
 
   // export all sprite-classes
   @each $sprite in sprite-names($map) {
-    .#{$name}-#{$sprite} {
-      @extend .#{$name}-sprite;
+    .#{$class-name}-#{$sprite} {
+      @extend .#{$class-name}-sprite;
       @include sprite-dimensions($map, $sprite);
       @include sprite-background-position($map, $sprite);
 
@@ -38,15 +39,15 @@
            (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5) {
       
       // base 2x class
-      .#{$name2x}-sprite {
+      .#{$class-name}2x-sprite {
         background: $map2x no-repeat;
         @include background-size(ceil(image-width(sprite-path($map2x)) / 2) auto);
       }
 
       // export all 2x sprite-classes
       @each $sprite in sprite-names($map) {
-        .#{$name2x}-#{$sprite} {
-          @extend .#{$name2x}-sprite;
+        .#{$class-name}2x-#{$sprite} {
+          @extend .#{$class-name}2x-sprite;
           @include sprite-background-position($map2x, $sprite);
 
           @if sprite_has_selector($map, $sprite, hover) {
