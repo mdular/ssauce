@@ -61,31 +61,3 @@
   }
 }
 
-
-
-/* TODO: OBSOLETE but code left until new mixin is is tested for 2x
-$icon2x-sprite-dimensions: true;
-$icon2x-spacing: 20px;
-$icon2x-sprites: sprite-map("icon2x/*.png", $spacing: 10px);
-
-// auto-switches all sprites to 2x variants with background-scaling on HiDPI devices
-@media (min-resolution: 1.5dppx), (min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5),
-       (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5) {
-
-  $name: sprite-map-name($icon-sprites);
-
-  .#{$name}-double {
-    background-image: sprite-url($icon2x-sprites);
-    @include background-size(ceil(image-width(sprite-path($icon2x-sprites)) / 2) auto);
-  }
-
-  @each $sprite in sprite-names($icon-sprites) {
-    .#{$name}-#{$sprite} {
-      @extend .#{$name}-double;
-
-      $coords: sprite-position($icon2x-sprites, $sprite);
-      background-position: nth($coords, 1) nth($coords, 2) / 2;
-    }
-  }
-}
-*/
