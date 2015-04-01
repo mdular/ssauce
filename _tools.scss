@@ -52,3 +52,12 @@
   background-image: -ms-linear-gradient($direction, $start, $end);
   @include background(linear-gradient($direction, $start, $end));
 }
+
+/*
+ * overflow text
+ */
+@mixin overflow-text($type: ellipsis){
+  text-overflow: $type;
+  white-space: nowrap;
+  overflow: hidden;
+}
